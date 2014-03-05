@@ -22,7 +22,7 @@ Here are the files you should take a look at, in logical order:
 
 1. `tokens.jisonlex` defines the tokens produced by the lexer.
 2. `grammar.jison` is the grammar defining the syntax. It is compiled to `parser.js`.
-3. `test.js` uses the parser to parser and output to the console. Modify this file.
+3. `test.js` uses the parser to parse and output the results to the console. Modify this file.
 
 ## License
 
