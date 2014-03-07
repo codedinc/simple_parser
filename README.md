@@ -24,6 +24,23 @@ Here are the files you should take a look at, in logical order:
 2. `grammar.jison` is the grammar defining the syntax. It is compiled to `parser.js`.
 3. `test.js` uses the parser to parse and output the results to the console. Modify this file.
 
+## How to modify the parser?
+
+Here's an idea to modify the parser on your own. Try adding support for parsing `false` or floating point numbers.
+
+You first need to define a new token in `tokens.jisonlex`:
+
+    [regexp/string to match that token]        return 'A_UNIQUE_AND_AWESOME_NAME'
+
+Then, add that tokens to `grammar.jison`.
+
+    expression:
+      ...
+    | A_UNIQUE_AND_AWESOME_NAME
+    ; 
+
+You can test your parser using `test.js`.
+
 ## License
 
 Copyright 2014 Coded Inc.  
