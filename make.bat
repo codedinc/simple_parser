@@ -1,8 +1,8 @@
 @echo off
 
-SET BIN=node_modules\.bin
+FOR /F "tokens=*" %%i IN ('npm bin') DO SET BIN=%%i
 
-%BIN%\jison lib\grammar.jison lib\tokens.jisonlex -o lib\parser.js
+%BIN%\jison grammar.jison tokens.jisonlex -o parser.js
 
 if "%1" == "test" (
   node test.js
