@@ -2,7 +2,7 @@
 
 FOR /F "tokens=*" %%i IN ('npm bin') DO SET BIN=%%i
 
-%BIN%\jison grammar.jison tokens.jisonlex -o parser.js
+"%BIN%\jison" grammar.jison tokens.jisonlex -o parser.js
 
 if "%1" == "test" (
   node test.js
@@ -10,7 +10,7 @@ if "%1" == "test" (
 )
 
 if "%1" == "watch" (
-  %BIN%\nodemon -x 'make test' -e 'js jison jisonlex' -q
+  "%BIN%\nodemon" -x 'make test' -e 'js jison jisonlex' -q
   goto DONE
 )
 
