@@ -1,4 +1,4 @@
-BIN = `npm bin`
+BIN = "`npm bin`"
 
 parser.js: grammar.jison tokens.jisonlex
 	${BIN}/jison $^ -o $@
